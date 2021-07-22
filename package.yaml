@@ -1,0 +1,21 @@
+name: megaparsec-binary
+
+dependencies:
+- base >= 4.7.0.0
+- bytestring
+- megaparsec
+
+library:
+  source-dirs: src
+
+executables:
+  megaparsec-binary-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -Wall
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - megaparsec-binary

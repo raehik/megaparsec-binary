@@ -1,0 +1,37 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           megaparsec-binary
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Text.Megaparsec.Byte.Binary
+      Text.Megaparsec.Byte.Binary.Internal
+  other-modules:
+      Paths_megaparsec_binary
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7.0.0
+    , bytestring
+    , megaparsec
+  default-language: Haskell2010
+
+executable megaparsec-binary-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_megaparsec_binary
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7.0.0
+    , bytestring
+    , megaparsec
+    , megaparsec-binary
+  default-language: Haskell2010
