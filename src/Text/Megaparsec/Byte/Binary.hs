@@ -18,14 +18,11 @@ import           Data.Proxy             ( Proxy(..) )
 import qualified Data.ByteString as BS
 import           Data.Void              ( Void )
 
--- | Parse any byte-representable value from any Word8 token stream using the
+-- | Parse any byte-representable value from any 'Word8' token stream using the
 --   given function.
 --
 -- Intended for byte-aligned types. May not work as expected with byte-unaligned
 -- types (bitsize not a multiple of 8).
---
--- Awkwardness to work with multiple streams: we only ask for a Word8 token
--- stream, and build our own strict ByteString to use in packing.
 anyFBits
     :: forall a e s m. (MonadParsec e s m, Token s ~ Word8, FiniteBits a, Num a)
     => ([Word8] -> a) -> Maybe String -> m a
